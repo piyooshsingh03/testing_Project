@@ -12,10 +12,10 @@ void setup() {
   Serial.begin(9600);
   pinMode(led_pin,OUTPUT);
 }
-
 void loop() {
   LEDState(LOW);
   delay(500);
   LEDState(HIGH);
   delay(500);
+  Serial.print("check loop");
 }
