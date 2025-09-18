@@ -1,3 +1,4 @@
+//This is only for testing pepose and this reposatry shared with ashish
 #include <Arduino.h>
 #define led_pin 2
 // put function declarations here:
@@ -17,5 +18,4 @@ void loop() {
   delay(500);
   LEDState(HIGH);
   delay(500);
-  Serial.print("check loop");
 }
