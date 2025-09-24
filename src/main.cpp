@@ -15,7 +15,7 @@
 // (to obtain these values, visit https://io.adafruit.com and click on Active Key)
 #define AIO_USERNAME "aioname"
 #define AIO_KEY      "724b81xxxxxxxxxxxxx61da2163bxxxx"
-
+int led_pin=2;
 int value=0;
 /************ Global State (you don't need to change this!) ******************/
 
@@ -59,6 +59,7 @@ Adafruit_MQTT_Publish temperature = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/
 /*************************** Sketch Code ************************************/
 void setup() {
  Serial.begin(115200);
+ pinMode(led_pin,OUTPUT);
  delay(10);
  Serial.println(F("Adafruit IO MQTTS (SSL/TLS) Example"));
 
@@ -71,6 +72,7 @@ void setup() {
  delay(2000);
 
  while (WiFi.status() != WL_CONNECTED) {
+  digitalWrite(led_pin,HIGH);
    delay(500);
    Serial.print(".");
  }
